@@ -123,44 +123,44 @@ public class WebSiteGlobalsQa {
 
 }
 
-//    @Test
-//    public void moveSliders() {
-//        WebElement iframe = browser.findElement(By.cssSelector("iframe.demo-frame.lazyloaded"));
-//        browser.switchTo().frame(iframe);
-//        List<WebElement> sliders = browser.findElements(By.cssSelector("span.ui-slider-handle"));
-//        Actions moveSlider = new Actions(browser);
-//        for (int i = 0; i < sliders.size(); i++) {
-//            if (browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
-//                    .getAttribute("style").equalsIgnoreCase("left: 100%;")) {
-//                moveSlider.clickAndHold(sliders.get(i)).moveByOffset(-100, 0).build().perform();
-//            } else {
-//                moveSlider.clickAndHold(sliders.get(i)).moveByOffset(100, 0).build().perform();
-//            }
-//        }
-//    }
+   @Test
+   public void moveSliders() {
+       WebElement iframe = browser.findElement(By.cssSelector("iframe.demo-frame.lazyloaded"));
+       browser.switchTo().frame(iframe);
+       List<WebElement> sliders = browser.findElements(By.cssSelector("span.ui-slider-handle"));
+       Actions moveSlider = new Actions(browser);
+       for (int i = 0; i < sliders.size(); i++) {
+           if (browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
+                   .getAttribute("style").equalsIgnoreCase("left: 100%;")) {
+               moveSlider.clickAndHold(sliders.get(i)).moveByOffset(-100, 0).build().perform();
+           } else {
+               moveSlider.clickAndHold(sliders.get(i)).moveByOffset(100, 0).build().perform();
+           }
+       }
+   }
 
 
-//    @Test
-//    public void moveRedSlider() {
-//        WebElement iframe = browser.findElement(By.cssSelector("iframe.demo-frame.lazyloaded"));
-//        browser.switchTo().frame(iframe);
-//        List<WebElement> sliders = browser.findElements(By.cssSelector("span.ui-slider-handle"));
-//        Actions moveSlider = new Actions(browser);
-//        String sliderPosition = browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
-//                .getAttribute("style");
-//        double sliderStartPositionValue = Double.parseDouble(sliderPosition.replaceAll("[left: %;]", ""));
-//        for (int i = 0; i < sliders.size(); i++) {
-//            if (browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content"))
-//                    .getAttribute("id").equalsIgnoreCase("red")) {
-//                moveSlider.clickAndHold(sliders.get(i)).moveByOffset(-100, 0).build().perform();
-//                break;
-//            }
-//        }
-//        sliderPosition = browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
-//                .getAttribute("style");
-//        double sliderEndPositionValue = Double.parseDouble(sliderPosition.replaceAll("[left: %;]", ""));
-//        Assert.assertTrue(sliderEndPositionValue < sliderStartPositionValue);
-//    }
+   @Test
+   public void moveRedSlider() {
+       WebElement iframe = browser.findElement(By.cssSelector("iframe.demo-frame.lazyloaded"));
+       browser.switchTo().frame(iframe);
+       List<WebElement> sliders = browser.findElements(By.cssSelector("span.ui-slider-handle"));
+       Actions moveSlider = new Actions(browser);
+       String sliderPosition = browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
+               .getAttribute("style");
+       double sliderStartPositionValue = Double.parseDouble(sliderPosition.replaceAll("[left: %;]", ""));
+       for (int i = 0; i < sliders.size(); i++) {
+           if (browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content"))
+                   .getAttribute("id").equalsIgnoreCase("red")) {
+               moveSlider.clickAndHold(sliders.get(i)).moveByOffset(-100, 0).build().perform();
+               break;
+           }
+       }
+       sliderPosition = browser.findElement(By.cssSelector("div.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content>span"))
+               .getAttribute("style");
+       double sliderEndPositionValue = Double.parseDouble(sliderPosition.replaceAll("[left: %;]", ""));
+       Assert.assertTrue(sliderEndPositionValue < sliderStartPositionValue);
+   }
 
 
 // Return a WebElement referencing the first selection option found by walking down the DOM
