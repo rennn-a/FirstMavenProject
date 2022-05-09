@@ -84,7 +84,6 @@ public class TestWebSiteAutomationPractice {
 
 
         automPracticeHomePage.userInfo("John", "Smith", "lalala");
-        //Проверка с по-малко символи!
 
         Select dropdownDay = new Select(automPracticeHomePage.dropDownDays);
         dropdownDay.selectByValue("1");
@@ -102,20 +101,6 @@ public class TestWebSiteAutomationPractice {
 
 
     }
-//    RANDOM PICTURE SELECTOR- Kiro
-//    @Test
-//    public void searchForADress() {
-//        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//div[@rel-title='Photo Manager']/p/iframe")));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h5[text()='High Tatras 2']/following-sibling::img")));
-//        List<WebElement> gallery = browser.findElements(By.cssSelector("ul#gallery>li"));
-//        int max = gallery.size();
-//        int min = 0;
-//        int randomPicture = (int)(Math.random()*(max-min+1)+min);
-//        WebElement trashBin = browser.findElement(By.id("trash"));
-//        Actions action = new Actions(browser);
-////        action.dragAndDrop(pictureToDelete, trashBin).build().perform();
-//        action.clickAndHold(gallery.get(randomPicture)).moveToElement(trashBin).release().build().perform();
-    //   }
 
 
 }
